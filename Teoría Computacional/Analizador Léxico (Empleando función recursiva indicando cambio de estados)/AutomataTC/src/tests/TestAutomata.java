@@ -6,6 +6,6 @@ public class TestAutomata {
  
     public static void main(String[] args) {
         Metodos m = new Metodos();
-        m.leerArchivoTxt("C:\\Users\\ivano\\Desktop\\numeros.txt");
+        m.leerArchivoTxt("//home//alumno//Escritorio//numeros");
     }
 }

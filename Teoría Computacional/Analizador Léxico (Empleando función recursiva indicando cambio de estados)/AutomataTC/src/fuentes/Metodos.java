@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class Metodos{
   public void esperar(){
      try{
-        Thread.sleep(500);
+        Thread.sleep(250);
      }catch(InterruptedException e){}
    }
   public void leerArchivoTxt(String direction){//File direction as an argument
