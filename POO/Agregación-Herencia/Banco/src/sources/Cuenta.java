@@ -6,14 +6,14 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
-    public double getSaldo() {
+    public double consultar() {
         return saldo;
     }
     public void depositar(double monto){
         saldo += monto;
     }
     public void retirar(double monto){
-        saldo -= monto;
+        saldo = saldo - monto;
     }
 
     @Override
