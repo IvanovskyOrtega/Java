@@ -8,21 +8,22 @@ import java.util.StringTokenizer;
 public class Metodos{
   public void esperar(){
      try{
-        Thread.sleep(500);
+        Thread.sleep(250);
      }catch(InterruptedException e){}
    }
-  public void leerArchivoTxt(String direction){//File direction as an argument
+  public void leerArchivoTxt(String direccion){//File direction as an argument
         try{
             FuncionDeTransicion funcion = new FuncionDeTransicion();
-            BufferedReader bf = new BufferedReader(new FileReader(direction));
+            BufferedReader bf = new BufferedReader(new FileReader(direccion));
             String bfRead;
             String s1;
             ArrayList<Character> cadena = new ArrayList<>();
             Alfabeto a = new Alfabeto();
+            Metodos m = new Metodos();
             int numTokens = 0;
             int numLineas = 0;
-            System.out.println("Que hongo bro, soy tu automata xdxdxd");
-            System.out.println("Voy a chambear :U");
+            System.out.println("ANALIZADOR LÉXICO");
+            System.out.println("Leyendo el archivo: "+direccion+" ...");
             while((bfRead = bf.readLine()) != null){
                 StringTokenizer st = new StringTokenizer (bfRead);
                 numLineas++;
@@ -35,17 +36,21 @@ public class Metodos{
                         cadena.add(s1.charAt(i));
                     }
                     if(a.numeros.containsAll(cadena)==true){
-                        System.out.println ("Palabra " + numTokens + " es: " + s1 + "\n\tEn la lìnea: "+numLineas);
+                        m.esperar();
+                        System.out.println ("\nPalabra #" + numTokens + 
+                                " En la lìnea: "+numLineas+" es: " + s1 );
                         funcion.cambioDeEstado(s1, 0, 0);
                     }
                     else{
-                        System.out.println(s1+" <------ Esto no es para mi :V");
+                        m.esperar();
+                        System.out.println("\n"+s1+" <------ Esto no es para mi!!!");
                     }
                 }
             }
         }catch(Exception e)
         {
-            System.err.println("File not found");
+            System.err.println("No se ha encontrado el archivo :/, "
+                    + "\nAsegurate de especificar correctamente la ruta");
         }
     }
 }

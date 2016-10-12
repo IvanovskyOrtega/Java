@@ -51,21 +51,27 @@ public class FuncionDeTransicion {
        else{
            switch(a){
                case 1:
+                   m.esperar();
                    System.out.println("Formato de número entero válido");
                    break;
                case 3:
+                   m.esperar();
                    System.out.println("Número '0', formato válido");
                    break;
                case 5:
+                   m.esperar();
                    System.out.println("Formato de número real válido");
                    break;
                case 8:
+                   m.esperar();
                    System.out.println("Formato de número real con exponente válido");
                    break;
                case 9:
+                   m.esperar();
                    System.out.println("Formato de número octal válido");
                    break;
                case 11:
+                   m.esperar();
                    System.out.println("Formato de número hexadecimal válido");
                    
            }

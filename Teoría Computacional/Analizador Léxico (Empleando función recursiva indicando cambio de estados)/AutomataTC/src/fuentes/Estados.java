@@ -15,20 +15,20 @@ public class Estados {
                     case '8':
                     case '9':
                         m.esperar();
-                        System.out.println("δ(q0,{1,2,3,4,5,6,7,8,9}) ---> q1");
+                        System.out.println("δ(q0, "+c+" ) ---> q1");
                         m.esperar();
                         F.cambioDeEstado(s,1,b);
                         break;
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q0,0) ---> q3");
+                        System.out.println("δ(q0, "+c+" ) ---> q3");
                         m.esperar();
                         F.cambioDeEstado(s,3,b);
                         break;
                     case '+':
                     case '-':
                         m.esperar();
-                        System.out.println("qδ(q0,{+,-}) ---> q2");
+                        System.out.println("qδ(q0, "+c+" ) ---> q2");
                         m.esperar();
                         F.cambioDeEstado(s,2,b);
                         break;
@@ -41,7 +41,7 @@ public class Estados {
                     case 'x':
                     default:
                         m.esperar();
-                        System.out.println("δ(q0,{A,B,C,D,E,F,x}) ---> M");
+                        System.out.println("δ(q0, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -63,22 +63,22 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q1,{0,1,2,3,4,5,6,7,8,9}) ---> q1");
+                        System.out.println("δ(q1, "+c+" ) ---> q1");
                         m.esperar();
                         F.cambioDeEstado(s,1,b);
                         break;
                     case '.':
                         m.esperar();
-                        System.out.println("δ(q1,.) ---> q4");
+                        System.out.println("δ(q1, "+c+" ) ---> q4");
                         m.esperar();
                         F.cambioDeEstado(s,4,b);
                         break;
                     case ';':
                         if(b == s.length())
-                            F.cambioDeEstado(s,1,b);
+                            F.cambioDeEstado(s,1,b);//Cierra inicialización de variable
                         else{
                             m.esperar();
-                            System.out.println("q1 ---> M");//que se pone aqui :'v
+                            System.out.println("δ(q1, "+c+" )  ---> M");// Mal cierre en la variable
                             System.out.println("Formato inválido o cadena no soportada");
                             m.esperar();
                             F.cambioDeEstado(s,12,b);
@@ -95,7 +95,7 @@ public class Estados {
                     case '-':
                     default:
                         m.esperar();
-                        System.out.println("δ(q1,{A,B,C,D,E,F,x,+,-}) ---> M");
+                        System.out.println("δ(q1, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -115,19 +115,19 @@ public class Estados {
                     case '8':
                     case '9':
                         m.esperar();
-                        System.out.println("δ(q2,{1,2,3,4,5,6,7,8,9}) ---> q1");
+                        System.out.println("δ(q2, "+c+" ) ---> q1");
                         m.esperar();
                         F.cambioDeEstado(s,1,b);
                         break;
                     case '.':
                         m.esperar();
-                        System.out.println("δ(q2,.) ---> q4");
+                        System.out.println("δ(q2, "+c+" ) ---> q4");
                         m.esperar();
                         F.cambioDeEstado(s,4,b);
                         break;
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q2,0) ---> q3");
+                        System.out.println("δ(q2, "+c+" ) ---> q3");
                         m.esperar();
                         F.cambioDeEstado(s,3,b);
                         break;
@@ -142,7 +142,7 @@ public class Estados {
                     case '-':
                     default:
                         m.esperar();
-                        System.out.println("δ(q2,{A,B,C,D,E,F,x,+,-}) ---> M");
+                        System.out.println("δ(q2, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -161,19 +161,19 @@ public class Estados {
                     case '7':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q3,{0,1,2,3,4,5,6,7}) ---> q9");
+                        System.out.println("δ(q3, "+c+" ) ---> q9");
                         m.esperar();
                         F.cambioDeEstado(s,9,b);
                         break;
                     case 'x':
                         m.esperar();
-                        System.out.println("δ(q3,x) ---> q10");
+                        System.out.println("δ(q3, "+c+" ) ---> q10");
                         m.esperar();
                         F.cambioDeEstado(s,10,b);
                         break;
                     case '.':
                         m.esperar();
-                        System.out.println("δ(q3,.) ---> q4");
+                        System.out.println("δ(q3, "+c+" ) ---> q4");
                         m.esperar();
                         F.cambioDeEstado(s,4,b);
                         break;
@@ -192,7 +192,7 @@ public class Estados {
                     case '-':
                     default:
                         m.esperar();
-                        System.out.println("δ(q3,{A,B,C,D,E,F,8,9,+,-}) ---> M");
+                        System.out.println("δ(q3, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -213,7 +213,7 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q4,{0,1,2,3,4,5,6,7,8,9})q4 ---> q5");
+                        System.out.println("δ(q4, "+c+" )q4 ---> q5");
                         m.esperar();
                         F.cambioDeEstado(s,5,b);
                         break;
@@ -229,7 +229,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q4,{A,b,C,D,E,F,x,.,+,-}) ---> M");
+                        System.out.println("δ(q4, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -250,13 +250,13 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q5,{0,1,2,3,4,5,6,7,8,9}) ---> q5");
+                        System.out.println("δ(q5, "+c+" ) ---> q5");
                         m.esperar();
                         F.cambioDeEstado(s,5,b);
                         break;
                     case 'E':
                         m.esperar();
-                        System.out.println("δ(q5,E) ---> q6");
+                        System.out.println("δ(q5, "+c+" ) ---> q6");
                         m.esperar();
                         F.cambioDeEstado(s,6,b);
                         break;
@@ -274,7 +274,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q5,{A,B,C,D,E,F,x,+,-}) ---> M");
+                        System.out.println("δ(q5, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -295,14 +295,14 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q6,{0,1,2,3,4,5,6,7,8,9}) ---> q8");
+                        System.out.println("δ(q6, "+c+" ) ---> q8");
                         m.esperar();
                         F.cambioDeEstado(s,8,b);
                         break;
                     case '+':
                     case '-':
                         m.esperar();
-                        System.out.println("δ(q6,{+,-}) ---> q7");
+                        System.out.println("δ(q6, "+c+" ) ---> q7");
                         m.esperar();
                         F.cambioDeEstado(s,7,b);
                         break;
@@ -316,7 +316,7 @@ public class Estados {
                     case '.':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q6,{A,B,C,D,E,F,x,.}) ---> M");
+                        System.out.println("δ(q6, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -337,7 +337,7 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q7,{0,1,2,3,4,5,6,7,8,9}) ---> q8");
+                        System.out.println("δ(q7, "+c+" ) ---> q8");
                         m.esperar();
                         F.cambioDeEstado(s,8,b);
                         break;
@@ -353,7 +353,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q7,{A,B,C,D,E,F,x,.,+,-}) ---> M");
+                        System.out.println("δ(q7, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -374,7 +374,7 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q8,{0,1,2,3,4,5,6,7,8,9}) ---> q8");
+                        System.out.println("δ(q8, "+c+" ) ---> q8");
                         m.esperar();
                         F.cambioDeEstado(s,8,b);
                         break;
@@ -390,7 +390,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q8,{A,B,C,D,E,F,x,.,+,-}) ---> M");
+                        System.out.println("δ(q8, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -409,7 +409,7 @@ public class Estados {
                     case '7':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q9,{0,1,2,3,4,5,6,7}) ---> q9");
+                        System.out.println("δ(q9, "+c+" ) ---> q9");
                         m.esperar();
                         F.cambioDeEstado(s,9,b);
                         break;
@@ -427,7 +427,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q9,{A,B,C,D,E,F,x,.,8,9,+,-}) ---> M");
+                        System.out.println("δ(q9, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -454,7 +454,7 @@ public class Estados {
                     case 'E':
                     case 'F':
                         m.esperar();
-                        System.out.println("δ(q10,{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}) ---> q11");
+                        System.out.println("δ(q10, "+c+" ) ---> q11");
                         m.esperar();
                         F.cambioDeEstado(s,11,b);
                         break;
@@ -464,7 +464,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q10,{x,.,+,-}) ---> M");
+                        System.out.println("δ(q10, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
@@ -491,7 +491,7 @@ public class Estados {
                     case 'E':
                     case 'F':
                         m.esperar();
-                        System.out.println("δ(q11,{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F}) ---> q11");
+                        System.out.println("δ(q11, "+c+" ) ---> q11");
                         m.esperar();
                         F.cambioDeEstado(s,11,b);
                         break;
@@ -501,7 +501,7 @@ public class Estados {
                     case '-':
                     default: 
                         m.esperar();
-                        System.out.println("δ(q11,{x,.,+,-}) ---> M");
+                        System.out.println("δ(q11, "+c+" ) ---> M");
                         System.out.println("Formato inválido o cadena no soportada");
                         m.esperar();
                         F.cambioDeEstado(s,12,b);
