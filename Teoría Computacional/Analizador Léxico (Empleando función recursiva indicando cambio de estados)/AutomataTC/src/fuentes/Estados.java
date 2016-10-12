@@ -213,7 +213,7 @@ public class Estados {
                     case '9':
                     case '0':
                         m.esperar();
-                        System.out.println("δ(q4, "+c+" )q4 ---> q5");
+                        System.out.println("δ(q4, "+c+" ) ---> q5");
                         m.esperar();
                         F.cambioDeEstado(s,5,b);
                         break;

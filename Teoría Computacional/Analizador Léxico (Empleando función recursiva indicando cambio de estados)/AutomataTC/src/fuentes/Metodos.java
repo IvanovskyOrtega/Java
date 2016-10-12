@@ -35,7 +35,7 @@ public class Metodos{
                     for(int i=0; i<s1.length();i++){
                         cadena.add(s1.charAt(i));
                     }
-                    if(a.numeros.containsAll(cadena)==true){
+                    if(a.alfabeto.containsAll(cadena)==true){
                         m.esperar();
                         System.out.println ("\nPalabra #" + numTokens + 
                                 " En la lìnea: "+numLineas+" es: " + s1 );
