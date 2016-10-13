@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fuentes;
 
 import java.io.BufferedWriter;
@@ -11,10 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Jessica
- */
 public class GenerarInforme {
     public void generarInforme(ArrayList<String> A, ArrayList<String> NA) {
 		try {
