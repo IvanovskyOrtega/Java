@@ -17,7 +17,7 @@ public class Cat extends Animal implements Pet {
 
     @Override
     public void eat() {
-        System.out.println("You've gave some tunny to your motherf***ing"+name+" :v");
+        System.out.println("You've gave some tunny to your motherf***ing "+name+" :v");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Cat extends Animal implements Pet {
 
     @Override
     public void play() {
-        System.out.println("Now it's playing with its f***ing ball");
+        System.out.println("Now it's playing with its f***ing  yarn ball");
     }
     
 }
